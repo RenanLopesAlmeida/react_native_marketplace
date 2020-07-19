@@ -1,0 +1,29 @@
+{
+    "products": [
+        {
+            "id": "123",
+            "title": "Gamer Chair 01",
+            "image_url": "https://images-na.ssl-images-amazon.com/images/I/619sWFsXJ%2BL._AC_SY879_.jpg",
+            "price": 452
+        },
+        {
+            "id": "1234",
+            "title": "Gamer Chair 02",
+            "image_url": "https://images-na.ssl-images-amazon.com/images/I/71ZDKZi3R2L._AC_SX522_.jpg",
+            "price": 399
+        },
+        {
+            "id": "12345",
+            "title": "Gamer Chair 03",
+            "image_url": "https://cdn.shopify.com/s/files/1/2660/5202/products/GAMBWCHR_5FAC_1400x.jpg?v=1571711374",
+            "price": 536
+        },
+        {
+            "id": "123456",
+            "title": "Gamer Chair 04",
+            "image_url": "https://www.bhphotovideo.com/images/images2500x2500/cougar_armor_one_gaming_chair_1457977.jpg",
+            "price": 689
+        }
+        
+    ]
+}
