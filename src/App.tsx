@@ -7,9 +7,9 @@ import Routes from './routes';
 import AppProvider from './hooks';
 
 const App: React.FC = () => (
-  <View style={{ flex: 1, backgroundColor: '#312e38' }}>
+  <View style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
     <AppProvider>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      <StatusBar barStyle="dark-content" backgroundColor="#f7f7f7" />
       <Routes />
     </AppProvider>
   </View>

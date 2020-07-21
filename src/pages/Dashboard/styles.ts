@@ -62,7 +62,8 @@ export const ProductImage = styled.Image`
 export const ProductTitle = styled.Text<Grid>`
   margin-top: 10px;
   font-size: ${(props: Grid) => (props.columns === 1 ? 18 : 14)}px;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: 'Roboto-Medium';
 `;
 
 export const ProductPriceContainer = styled.View`
@@ -75,8 +76,9 @@ export const ProductPriceContainer = styled.View`
 
 export const ProductPrice = styled.Text`
   font-size: ${(props: Grid) => (props.columns === 1 ? 18 : 16)}px;
-  font-weight: bold;
+  font-weight: 500;
   color: #e83f5b;
+  font-family: 'Roboto-Regular';
 `;
 
 export const ProductButton = styled.TouchableOpacity<Grid>`

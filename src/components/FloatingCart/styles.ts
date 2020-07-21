@@ -20,8 +20,9 @@ export const CartButton = styled.TouchableOpacity`
 
 export const CartButtonText = styled.Text`
   color: #fff;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto-Medium';
   margin-left: 16px;
 `;
 
@@ -32,5 +33,6 @@ export const PriceContainer = styled.View`
 export const PriceText = styled.Text`
   color: #fff;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: 'Roboto-Medium';
 `;

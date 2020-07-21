@@ -23,7 +23,31 @@
             "title": "Gamer Chair 04",
             "image_url": "https://www.bhphotovideo.com/images/images2500x2500/cougar_armor_one_gaming_chair_1457977.jpg",
             "price": 689
-        }
-        
+        },
+        {
+          "id": "1234567",
+          "title": "Gamer Chair 05",
+          "image_url": "https://www.cowcotland.com/images/news/2020/04/cougar-argo.jpg",
+          "price": 885.90
+      },
+      {
+          "id": "12345678",
+          "title": "Gamer Chair 06",
+          "image_url": "https://www.techfox.co.za/wp-content/uploads/raidmax-dk925-argb-gaming-chair-white-a.jpg",
+          "price": 1289.99
+      },
+      {
+          "id": "123456789",
+          "title": "Gamer Chair 07",
+          "image_url": "https://c1.neweggimages.com/NeweggImage/ProductImage/AKKE_1321023755399458301EV7VMh8N5.jpg",
+          "price": 876.70
+      },
+      {
+          "id": "12345678910",
+          "title": "Gamer Chair 08",
+          "image_url": "https://c1.neweggimages.com/NeweggImage/ProductImage/AKKE_132141375813349553witgjVHEay.jpg",
+          "price": 887.99
+      }
+
     ]
 }

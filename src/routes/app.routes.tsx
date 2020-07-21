@@ -30,7 +30,7 @@ const AppRoutes: React.FC = () => (
       options={{
         headerTitle: () => <Image source={Logo} />,
         headerStyle: {
-          backgroundColor: '#FFF',
+          backgroundColor: '#f7f7f7',
           borderBottomLeftRadius: 15,
           borderBottomRightRadius: 15,
         },
@@ -45,10 +45,12 @@ const AppRoutes: React.FC = () => (
         headerTitle: () => <Image source={Logo} />,
 
         headerBackTitleVisible: false,
-        headerBackImage: () => <FeatherIcon name="chevron-left" size={30} />,
+        headerBackImage: () => (
+          <FeatherIcon name="chevron-left" size={30} color="#3D3D4D" />
+        ),
 
         headerStyle: {
-          backgroundColor: '#FFF',
+          backgroundColor: '#f7f7f7',
           borderBottomLeftRadius: 15,
           borderBottomRightRadius: 15,
         },

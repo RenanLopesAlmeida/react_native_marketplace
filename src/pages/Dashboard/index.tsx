@@ -7,6 +7,7 @@ import api from '../../services/api';
 import { useCart } from '../../hooks/cart';
 
 import FloatingCart from '../../components/FloatingCart';
+import formatValue from '../../utils/formatValue';
 
 import {
   Container,
@@ -103,11 +104,11 @@ const Dashboard: React.FC = () => {
 
               <ProductPriceContainer>
                 <ProductPrice columns={columns}>
-                  R$
-                  {item.price}
+                  {formatValue(item.price)}
                 </ProductPrice>
 
                 <ProductButton
+                  activeOpacity={0.8}
                   columns={columns}
                   onPress={() => {
                     handleAddToCart(item);
@@ -115,8 +116,8 @@ const Dashboard: React.FC = () => {
                 >
                   <Icon
                     name="plus"
-                    size={columns === 1 ? 30 : 20}
-                    color="#c4c4c4"
+                    size={columns === 1 ? 30 : 22}
+                    color="#b8b8b8"
                   />
                 </ProductButton>
               </ProductPriceContainer>

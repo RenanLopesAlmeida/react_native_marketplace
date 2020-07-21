@@ -2,6 +2,8 @@ import React from 'react';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+import { View } from 'react-native';
+import formatValue from '../../utils/formatValue';
 import {
   Container,
   ProductContainer,
@@ -17,14 +19,12 @@ import {
   TotalContainer,
   ActionContainer,
   ActionButton,
-  TotalProductsContainer,
-  CartButton,
-  CartButtonText,
-  PriceContainer,
-  SubTotalValue,
+  InfoNoItems,
+  InfoText,
 } from './styles';
 
 import { useCart } from '../../hooks/cart';
+import FloatingCart from '../../components/FloatingCart';
 
 interface Product {
   id: string;
@@ -35,55 +35,73 @@ interface Product {
 }
 
 const Cart: React.FC = () => {
-  const { products, increment, decrement, addToCart } = useCart();
+  const { products, increment, decrement } = useCart();
+
   return (
     <Container>
       <ProductContainer>
-        <ProductList
-          data={products}
-          keyExtractor={item => item.id}
-          renderItem={({ item }: { item: Product }) => (
-            <ProductCard>
-              <ProductImage
-                resizeMode="contain"
-                source={{ uri: item.image_url }}
-              />
+        {products.length === 0 && (
+          <InfoNoItems>
+            <FeatherIcon name="shopping-bag" size={45} color="#e83f5b" />
+            <InfoText>There are no items in your shopping cart</InfoText>
+          </InfoNoItems>
+        )}
+        {products.length > 0 && (
+          <ProductList
+            data={products}
+            keyExtractor={item => item.id}
+            key={products}
+            extraData={products}
+            ListFooterComponent={<View />}
+            ListFooterComponentStyle={{ height: 120 }}
+            renderItem={({ item }) => (
+              <ProductCard>
+                <ProductImage
+                  resizeMode="contain"
+                  source={{ uri: item.image_url }}
+                />
 
-              <ProductInfoContainer>
-                <ProductTitle>{item.title}</ProductTitle>
+                <ProductInfoContainer>
+                  <ProductTitle>{item.title}</ProductTitle>
 
-                <ProductPriceContainer>
-                  <ProductSinglePrice>{item.price}</ProductSinglePrice>
+                  <ProductPriceContainer>
+                    <ProductSinglePrice>
+                      {formatValue(item.price)}
+                    </ProductSinglePrice>
 
-                  <TotalContainer>
-                    <ProductQuantity>{`${item.quantity} X`}</ProductQuantity>
-                    <ProductPrice>{item.quantity * item.price}</ProductPrice>
-                  </TotalContainer>
-                </ProductPriceContainer>
-              </ProductInfoContainer>
+                    <TotalContainer>
+                      <ProductQuantity>{`${item.quantity} X`}</ProductQuantity>
+                      <ProductPrice>
+                        {formatValue(item.quantity * item.price)}
+                      </ProductPrice>
+                    </TotalContainer>
+                  </ProductPriceContainer>
+                </ProductInfoContainer>
 
-              <ActionContainer>
-                <ActionButton onPress={() => {}}>
-                  <FeatherIcon name="plus" color="#E83F5B" size={18} />
-                </ActionButton>
+                <ActionContainer>
+                  <ActionButton
+                    onPress={() => {
+                      increment(item.id);
+                    }}
+                  >
+                    <FeatherIcon name="plus" color="#E83F5B" size={18} />
+                  </ActionButton>
 
-                <ActionButton onPress={() => {}}>
-                  <FeatherIcon name="minus" color="#E83F5B" size={18} />
-                </ActionButton>
-              </ActionContainer>
-            </ProductCard>
-          )}
-        />
+                  <ActionButton
+                    onPress={() => {
+                      decrement(item.id);
+                    }}
+                  >
+                    <FeatherIcon name="minus" color="#E83F5B" size={18} />
+                  </ActionButton>
+                </ActionContainer>
+              </ProductCard>
+            )}
+          />
+        )}
       </ProductContainer>
 
-      <TotalProductsContainer>
-        <CartButton>
-          <FeatherIcon name="shopping-cart" size={20} color="#FFF" />
-          <CartButtonText>0 items</CartButtonText>
-        </CartButton>
-
-        <SubTotalValue>R$ 5500</SubTotalValue>
-      </TotalProductsContainer>
+      <FloatingCart />
     </Container>
   );
 };

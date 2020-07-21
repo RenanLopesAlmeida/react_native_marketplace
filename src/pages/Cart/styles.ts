@@ -3,14 +3,27 @@ import { FlatList } from 'react-native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  align-items: center;
 `;
 
 export const ProductContainer = styled.View`
-  margin-top: 60px;
+  margin-top: 20px;
   border-radius: 5px;
   flex: 1;
   flex-direction: row;
+`;
+
+export const InfoNoItems = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InfoText = styled.Text`
+  font-size: 20px;
+  color: #232129;
+  font-weight: 500;
+  margin: 10px;
+  font-family: 'Roboto-Regular';
 `;
 
 export const ProductList = styled(FlatList)`
@@ -24,7 +37,7 @@ export const ProductCard = styled.View`
   margin: 5px;
   background: #fff;
   border-radius: 8px;
-  elevation: 8;
+  elevation: 1;
   flex-direction: row;
 `;
 
@@ -41,7 +54,7 @@ export const ProductInfoContainer = styled.View`
 export const ProductTitle = styled.Text`
   margin-top: 10px;
   font-size: 18px;
-  font-weight: bold;
+  font-family: 'Roboto-Medium';
 `;
 
 export const ProductPriceContainer = styled.View`
@@ -49,9 +62,10 @@ export const ProductPriceContainer = styled.View`
 `;
 
 export const ProductSinglePrice = styled.Text`
-  font-size: 12px;
+  font-size: 14px;
   color: #a0a0b3;
   margin-top: 8px;
+  font-family: 'Roboto-Regular';
 `;
 
 export const TotalContainer = styled.View`
@@ -63,13 +77,14 @@ export const ProductQuantity = styled.Text`
   color: #e83f5b;
   font-size: 16px;
   margin-right: 5px;
-  font-weight: bold;
+  font-family: 'Roboto-Regular';
 `;
 
 export const ProductPrice = styled.Text`
   font-size: 16px;
   color: #e83f5b;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: 'Roboto-Regular';
 `;
 
 export const ActionContainer = styled.View`
@@ -85,39 +100,4 @@ export const ActionButton = styled.TouchableOpacity`
   padding: 12px;
   margin-bottom: 5px;
   border-radius: 5px;
-`;
-
-export const TotalProductsContainer = styled.View`
-  position: absolute;
-  bottom: 0;
-  background: #e83f5b;
-  padding: 20px;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-`;
-
-export const CartButton = styled.TouchableOpacity`
-  flex: 1;
-  flex-direction: row;
-  background: transparent;
-`;
-
-export const CartButtonText = styled.Text`
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 16px;
-`;
-
-export const PriceContainer = styled.View`
-  margin-right: 10px;
-`;
-
-export const SubTotalValue = styled.Text`
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
 `;
