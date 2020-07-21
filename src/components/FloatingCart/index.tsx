@@ -47,7 +47,7 @@ const FloatingCart: React.FC = () => {
         <FeatherIcon name="shopping-cart" size={20} color="#FFF" />
         <CartButtonText>
           {`${totalItemsInCart}`}
-          {totalItemsInCart === 0 ? ' items' : ' item'}
+          {totalItemsInCart === 1 ? ' item' : ' items'}
         </CartButtonText>
       </CartButton>
 
